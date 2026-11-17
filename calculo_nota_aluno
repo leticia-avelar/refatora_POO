@@ -1,0 +1,37 @@
+class Aluno:
+    
+    def __init__(self, nome, idade, notas):
+        self.nome = nome
+        self.idade = idade
+        self.notas = notas
+
+    
+    def calcular_media(self):
+      
+        return sum(self.notas) / len(self.notas)
+
+   
+    def verificar_situacao(self):
+        if self.calcular_media() >= 7.0:
+            return "aprovado"
+        else:
+            return "reprovado"
+
+    
+    def exibir_informacoes(self):
+        media = self.calcular_media()
+        situacao = self.verificar_situacao()
+        
+        print(f"Aluno: {self.nome}")
+        print(f"Idade: {self.idade}")
+        print(f"Média: {media:.2f}")
+        print(f"Resultado: {situacao}")
+
+
+
+if __name__ == "__main__":
+    
+    aluno1 = Aluno(nome="Letícia", idade=25, notas=[7.0, 8.0, 9.0])
+    
+   
+    aluno1.exibir_informacoes()
